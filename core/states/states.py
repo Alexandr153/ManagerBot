@@ -1,13 +1,15 @@
 from core.utils.commands import set_commands
-from core.config.config import bot, dp
+from aiogram import Router, Bot
+
+router = Router()
 
 
-@dp.startup()
-async def start_bot() -> None:
+@router.startup()
+async def start_bot(bot: Bot) -> None:
     await set_commands(bot)
     print("[-] Бот начал работу")
 
 
-@dp.shutdown()
+@router.shutdown()
 async def stop_bot() -> None:
     print("[-] Бот закончил работу")

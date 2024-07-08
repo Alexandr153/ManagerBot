@@ -1,12 +1,18 @@
 import asyncio
-from core.config.config import bot, dp
+from aiogram import Bot, Dispatcher
+from config.config import API_TOKEN
 
-# Commands and handlers and more...
-import core.states.states
-import core.handlers.GroupInterface.CommandsMenu.start
+from core.handlers.GroupInterface.CommandsMenu import start
+from core.states import states
 
 
 async def main() -> None:
+    bot: Bot = Bot(API_TOKEN)
+    dp: Dispatcher = Dispatcher()
+
+    dp.include_router(states.router)
+    dp.include_router(start.router)
+
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
 
