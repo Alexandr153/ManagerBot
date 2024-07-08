@@ -10,6 +10,8 @@ async def cmd_start(message: Message) -> None:
                          'Официальный чат бота\n'
                          'Канал с новостями\n'
                          'Канал разработчика\n\n'
-                         'Пользовательское соглашение', parse_mode='HTML')
+                         'Пользовательское соглашение',
+                         parse_mode='HTML',
+                         disable_web_page_preview=True)
 
 

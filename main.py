@@ -3,7 +3,7 @@ from core.config.config import bot, dp
 
 # Commands and handlers and more...
 import core.states.states
-import core.handlers.GroupInterface.commands.start
+import core.handlers.GroupInterface.CommandsMenu.start
 
 
 async def main() -> None:

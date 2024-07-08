@@ -1,1 +1,1 @@
-# GodBot
+# ManagerBot
