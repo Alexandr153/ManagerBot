@@ -1,7 +1,7 @@
 from aiogram.types import BotCommand, BotCommandScopeDefault
 
 
-# Инлайн команды
+# Встроенные инлайн команды
 async def set_commands(bot):
     commands = [
         BotCommand(

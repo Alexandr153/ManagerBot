@@ -10,6 +10,7 @@ async def main() -> None:
     bot: Bot = Bot(API_TOKEN)
     dp: Dispatcher = Dispatcher()
 
+    # Подключение роутеров
     dp.include_router(states.router)
     dp.include_router(start.router)
 
