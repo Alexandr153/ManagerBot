@@ -1,5 +1,14 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
+'''
+    [Статус]
+    Своевременное дополнение
+    [Описание скрипта]
+    Основные реплай клавиатуры
+    [Исполнители]
+    Alexandr153
+'''
+
 main = ReplyKeyboardMarkup(keyboard=[
     [
         KeyboardButton(text="Случайная беседа")

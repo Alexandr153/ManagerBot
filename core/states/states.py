@@ -1,6 +1,15 @@
 from core.utils.commands import set_commands
 from aiogram import Router, Bot
 
+'''
+    [Статус]
+    Своевременное дополнение
+    [Описание скрипта]
+    Основные состояния бота
+    [Исполнители]
+    Alexandr153
+'''
+
 router = Router()
 
 

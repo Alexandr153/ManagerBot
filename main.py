@@ -2,7 +2,7 @@ import asyncio
 from aiogram import Bot, Dispatcher
 from config.config import API_TOKEN
 
-from core.handlers.GroupInterface.CommandsMenu import start
+from core.handlers.Interface.CommandsMenu import start
 from core.states import states
 
 
