@@ -1,11 +1,10 @@
 from aiogram.types import Message
 from aiogram.filters import Command
-from aiogram import Router, Bot
-from core.filters.IsPrivate import IsPrivate
+from aiogram import Router
 from typing import Optional
 
 # Основная клавиатура для личных сообщений
-from core.keyboards.reply.MainKeyboard import main as kb
+from core.keyboards.reply.main_keyboard import main as kb
 
 '''
     [Статус]

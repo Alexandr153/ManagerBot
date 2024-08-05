@@ -15,11 +15,11 @@ async def set_commands(bot):
     commands = [
         BotCommand(
             command='start',
-            description='123'
+            description='Описание бота'
         ),
         BotCommand(
             command='support',
-            description='234'
+            description='Агенты поддержки'
         )
     ]
 

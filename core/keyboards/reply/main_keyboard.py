@@ -9,7 +9,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
     Alexandr153
 '''
 
-main = ReplyKeyboardMarkup(keyboard=[
+main: ReplyKeyboardMarkup = ReplyKeyboardMarkup(keyboard=[
     [
         KeyboardButton(text="Случайная беседа")
     ],
