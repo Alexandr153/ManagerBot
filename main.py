@@ -1,18 +1,20 @@
 import asyncio
-import logging
+import logging.config
 from aiogram import Bot, Dispatcher
 from config.config import API_TOKEN
 
-from core.handlers.Interface.CommandsMenu import start
-from core.handlers.Interface.CommandsMenu import support
+from core.handlers.interface.commands_menu import start
+from core.handlers.interface.commands_menu import support
 from core.states import states
+
+from logging_settings import logging_config
 
 
 async def main() -> None:
     bot: Bot = Bot(API_TOKEN)
     dp: Dispatcher = Dispatcher()
 
-    logging.basicConfig(level=logging.INFO)
+    logging.config.dictConfig(logging_config)
 
     # Подключение роутеров
     dp.include_router(states.router)

@@ -1,7 +1,9 @@
+import logging
+
 from aiogram.types import Message
 from aiogram.filters import Command
 from aiogram import Router
-from core.filters.ChatTypeFilter import ChatTypeFilter
+from core.filters.chat_filters import ChatTypeFilter
 
 
 '''
@@ -15,6 +17,8 @@ from core.filters.ChatTypeFilter import ChatTypeFilter
 '''
 
 router = Router()
+
+logger = logging.getLogger(__name__)
 
 
 @router.message(Command('support', 'поддержка', prefix='/!'), ChatTypeFilter('private'))
