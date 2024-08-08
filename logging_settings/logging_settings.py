@@ -1,6 +1,6 @@
 import sys
 
-from log_filters import DebugWarningLogFilter, CriticalLogFilter, ErrorLogFilter
+from logging_settings.log_filters import DebugWarningLogFilter, CriticalLogFilter, ErrorLogFilter
 
 '''
     [Статус]
@@ -20,16 +20,10 @@ logging_config = {
         'default': {
             'format': '#%(levelname)-8s %(name)s:%(funcName)s - %(message)s'
         },
-        'formatter_1': {
-            'format': '[%(asctime)s] #%(levelname)-8s %(filename)s:'
-                      '%(lineno)d - %(name)s:%(funcName)s - %(message)s'
-        },
-        'formatter_2': {
-            'format': '#%(levelname)-8s [%(asctime)s] - %(filename)s:'
-                      '%(lineno)d - %(name)s:%(funcName)s - %(message)s'
-        },
-        'formatter_3': {
-            'format': '#%(levelname)-8s [%(asctime)s] - %(message)s'
+        'main_formatter': {
+            'format': '[{asctime}] #{levelname} {filename}:'
+                      '{lineno} - {name} - {message}',
+            'style': '{'
         }
     },
 
@@ -58,7 +52,7 @@ logging_config = {
         },
         'stdout': {
             'class': 'logging.StreamHandler',
-            'formatter': 'formatter_2',
+            'formatter': 'main_formatter',
             'filters': ['debug_warning_filter'],
             'stream': sys.stdout
         }
@@ -82,6 +76,12 @@ logging_config = {
 
     'loggers': {
         'core.handlers.interface.commands_menu.support': {
+            'level': 'DEBUG',
+            'handlers': ['stdout'],
+            'propagate': False
+        },
+
+        'core.states.states': {
             'level': 'DEBUG',
             'handlers': ['stdout'],
             'propagate': False

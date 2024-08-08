@@ -7,7 +7,7 @@ from core.handlers.interface.commands_menu import start
 from core.handlers.interface.commands_menu import support
 from core.states import states
 
-from logging_settings import logging_config
+from logging_settings.logging_settings import logging_config
 
 
 async def main() -> None:
