@@ -21,7 +21,7 @@ logging_config = {
             'format': '#%(levelname)-8s %(name)s:%(funcName)s - %(message)s'
         },
         'main_formatter': {
-            'format': '[{asctime}] #{levelname} {filename}:'
+            'format': '#{levelname} [{asctime}] {filename}:'
                       '{lineno} - {name} - {message}',
             'style': '{'
         }
@@ -53,7 +53,6 @@ logging_config = {
         'stdout': {
             'class': 'logging.StreamHandler',
             'formatter': 'main_formatter',
-            'filters': ['debug_warning_filter'],
             'stream': sys.stdout
         }
         # 'error_file': {
@@ -75,12 +74,16 @@ logging_config = {
 
 
     'loggers': {
+        '__main__': {
+            'level': 'DEBUG',
+            'handlers': ['stdout'],
+            'propagate': False
+        },
         'core.handlers.interface.commands_menu.support': {
             'level': 'DEBUG',
             'handlers': ['stdout'],
             'propagate': False
         },
-
         'core.states.states': {
             'level': 'DEBUG',
             'handlers': ['stdout'],

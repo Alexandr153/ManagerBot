@@ -18,6 +18,8 @@ from core.filters.chat_filters import ChatTypeFilter
 
 router = Router()
 
+logger = logging.getLogger(__name__)
+
 
 @router.message(Command('support', 'поддержка', prefix='/!'), ChatTypeFilter('private'))
 async def support(message: Message) -> None:

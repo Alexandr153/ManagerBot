@@ -21,10 +21,9 @@ logger = logging.getLogger(__name__)
 @router.startup()
 async def start_bot(bot: Bot) -> None:
     await set_commands(bot)
-    logger.debug('Бот начал работу')
 
 
 # При завершении работы боты
 @router.shutdown()
 async def stop_bot() -> None:
-    logger.debug('Бот завершил работу')
+    logger.info('Бот завершил работу')
