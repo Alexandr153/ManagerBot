@@ -1,7 +1,7 @@
 import asyncio
 import logging.config
 from aiogram import Bot, Dispatcher
-from config.config import API_TOKEN
+from config.config import load_config
 
 from core.handlers.interface.commands_menu import start
 from core.handlers.interface.commands_menu import support
@@ -11,9 +11,14 @@ from logging_settings.logging_settings import logging_config
 
 
 async def main() -> None:
+    # Подгрузка конфигурации
+    config = load_config()
+    API_TOKEN = config.tg_bot.token
+
     bot: Bot = Bot(API_TOKEN)
     dp: Dispatcher = Dispatcher()
 
+    # Настройка базовой конфигурации логгирования
     logging.config.dictConfig(logging_config)
 
     # Подключение роутеров
