@@ -1,7 +1,10 @@
 import asyncio
 import logging.config
+
 from aiogram import Bot, Dispatcher
+from aiogram.enums import ParseMode
 from config.config import Config, load_config
+from aiogram.client.default import DefaultBotProperties
 
 from core.handlers.interface.commands_menu import start
 from core.handlers.interface.commands_menu import support
@@ -25,7 +28,10 @@ async def main() -> None:
     API_TOKEN = config.tg_bot.token
 
     # Инициализируем бот и диспетчер
-    bot: Bot = Bot(API_TOKEN)
+    bot: Bot = Bot(
+        token=API_TOKEN,
+        default=DefaultBotProperties(parse_mode=ParseMode.HTML)
+    )
     dp: Dispatcher = Dispatcher()
 
     logger.info('Подключение роутеров')
