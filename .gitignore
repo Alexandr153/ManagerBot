@@ -160,7 +160,7 @@ cython_debug/
 #.idea/
 
 # Config
-config
+config/.env
 
 # idea
 .idea
