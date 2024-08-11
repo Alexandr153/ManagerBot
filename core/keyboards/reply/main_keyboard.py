@@ -26,4 +26,7 @@ main: ReplyKeyboardMarkup = ReplyKeyboardMarkup(keyboard=[
         KeyboardButton(text="Команды")
     ]
 ],
-    resize_keyboard=True)
+    resize_keyboard=True,
+    one_time_keyboard=True,     # После использования клавиатура будет сворачиваться
+    selective=True              # При вызове клавиатуры вызывается только для того, кто её вызвал
+)
