@@ -79,12 +79,12 @@ logging_config = {
             'handlers': ['stdout'],
             'propagate': False
         },
-        'core.handlers.interface.commands_menu.support': {
+        'handlers.interface.commands_menu.support': {
             'level': 'DEBUG',
             'handlers': ['stdout'],
             'propagate': False
         },
-        'core.states.states': {
+        'states.states': {
             'level': 'DEBUG',
             'handlers': ['stdout'],
             'propagate': False

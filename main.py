@@ -6,9 +6,8 @@ from aiogram.enums import ParseMode
 from config.config import Config, load_config
 from aiogram.client.default import DefaultBotProperties
 
-from core.handlers.interface.commands_menu import start
-from core.handlers.interface.commands_menu import support
-from core.states import states
+from handlers.interface.commands_menu import support, start
+from states import states
 
 from logging_settings.logging_settings import logging_config
 

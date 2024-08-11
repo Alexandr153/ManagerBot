@@ -4,7 +4,7 @@ from aiogram import Router
 from typing import Optional
 
 # Основная клавиатура для личных сообщений
-from core.keyboards.reply.main_keyboard import main as kb
+from keyboards.reply.main_keyboard import main as kb
 
 '''
     [Статус]
@@ -20,7 +20,7 @@ router = Router()
 
 
 # Команда /help
-@router.message(Command('help', 'start', prefix='/!'))
+@router.message(Command('help', 'start', 'menu', prefix='/!'))
 async def cmd_start(message: Message) -> None:
     keyboard: Optional[kb] = kb
     if not message.chat.type == "private":

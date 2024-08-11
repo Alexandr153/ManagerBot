@@ -1,4 +1,4 @@
-from core.utils.commands import set_commands
+from utils.commands import set_commands
 from aiogram import Router, Bot
 
 import logging
