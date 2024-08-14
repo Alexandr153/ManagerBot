@@ -25,6 +25,8 @@ async def cmd_start(message: Message) -> None:
     keyboard: Optional[kb] = kb
     if not message.chat.type == "private":
         keyboard = None
+    else:
+        pass        # Реализовать функцию с базой данных, заносящую пользователя в список рассылки
     await message.answer(
         'Добро пожаловать в Manager Bot - бот, созданный для всестороннего модерирования чата и развлечения.\n\n'
         'Список всех команд\n'

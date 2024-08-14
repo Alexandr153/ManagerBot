@@ -1,4 +1,5 @@
 from aiogram.types import BotCommand, BotCommandScopeDefault
+from aiogram import Bot
 
 '''
     [Статус]
@@ -11,7 +12,7 @@ from aiogram.types import BotCommand, BotCommandScopeDefault
 
 
 # Встроенные инлайн команды
-async def set_commands(bot):
+async def set_commands(bot: Bot) -> None:
     commands = [
         BotCommand(
             command='start',
